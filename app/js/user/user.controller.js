@@ -4,7 +4,7 @@
 
   angular.module('Images')
 
-  .controller('User', ['$scope', '$http', 'PARSE', '$location', function($scope, $http, PARSE, $location) {
+  .controller('User', ['$scope', '$http', 'PARSE', '$location', 'UserService', function($scope, $http, PARSE, $location, UserService) {
 
     // imagecard constructor
     var User = function(options) {
@@ -17,7 +17,7 @@
     $scope.userSignUp = function(x) {
       var user = new User(x);
 
-      $http.post(PARSE.URL + 'classes/users/', user, PARSE.CONFIG)
+      $http.post(PARSE.URL + 'users/', user, PARSE.CONFIG)
       .success( function() {
 
         $location.path('/');
@@ -26,27 +26,9 @@
       })
     };
 
-    $scope.userLogin = function(data) {
-      var user = {}
-      user.username = data.username;
-      user.password = data.password;
-      user.objectId = data.objectId;
-      user.email = data.email;
-
-      $http.get(PARSE.URL + 'classes/users/', PARSE.CONFIG)
-      .success( function(x) {
-
-        for (var i = 0; i < x.results.length; i++) {
-          if(x.results[i].username == user.username) {
-
-            Cookies.set('access_token');
-            Cookies.set('username', user.username);
-            Cookies.set('id', x.results[i].objectId);
-
-          }
-        }
-
-      });
+    $scope.login = function(x) {
+      console.log(x);
+      UserService.userLogin(x);
     };
 
     $scope.logout = function() {
