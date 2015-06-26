@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/vendor/materialize.css">
+  <link rel="stylesheet" href="css/vendor/font-awesome.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="Images" class="grey darken-1">
@@ -34,11 +35,18 @@
   </nav>
   <!--  -->
 
-
+  <div class = "contWrap row" style="position:relative;">
+  <div class="left s1 black" style="position:absolute;top:0.5sem;left:0;height:300px;width:5em;">
+    <a href="http://facebook.com/"><i class = "fa fa-facebook hovr-icon faceb row"></i></a>
+    <a href="http://twitter.com/"><i class = "fa fa-twitter hovr-icon twit row"></i></a>
+    <a href="http://instagram.com/"><i class = "fa fa-instagram hovr-icon insta row"></i></a>
+    <a href="http://github.com/"><i class = "fa fa-github hovr-icon gith row"></i></a>
+  </div>
   <!-- VIEW -->
-  <div class= "container row" ng-view></div>
+  <div class= "container" ng-view></div>
   <!--  -->
 
+  </div>
 
   <!-- FOOTER -->
   <footer class="page-footer grey darken-4" style="border-top: solid 48px black;" ng-controller = "User">

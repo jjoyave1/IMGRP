@@ -8,10 +8,11 @@
 
     $scope.userGrp = [];
 
-    $http.get(PARSE.URL + 'classes/users/', PARSE.CONFIG)
+    $http.get(PARSE.URL + 'users/', PARSE.CONFIG)
 
     .success( function (data) {
-      $scope.userGrp = data.results;
+      console.log(data)
+      // $scope.userGrp = data.results;
     });
 
   }]);

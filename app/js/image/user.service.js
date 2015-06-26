@@ -21,6 +21,16 @@
       });
     };
 
+    this.userLogout = function() {
+
+      Cookies.expire('access_token');
+      Cookies.expire('username');
+      Cookies.expire('id');
+
+      $scope.user = {};
+
+    };
+
   }]);
 
 }());

@@ -27,18 +27,11 @@
     };
 
     $scope.login = function(x) {
-      console.log(x);
       UserService.userLogin(x);
     };
 
     $scope.logout = function() {
-
-      Cookies.expire('access_token');
-      Cookies.expire('username');
-      Cookies.expire('id');
-
-      $scope.user = {}
-
+      UserService.userLogout();
     };
 
     $scope.username = Cookies.get('username');

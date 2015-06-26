@@ -22,7 +22,8 @@
     "angular": "~1.4.1",
     "angular-route": "~1.4.1",
     "materialize": "~0.97.0",
-    "Cookies": "~1.2.1"
+    "Cookies": "~1.2.1",
+    "font-awesome": "~4.3.0"
   },
   "devDependencies": {
     "mocha": "~2.2.5",
