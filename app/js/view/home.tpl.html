@@ -6,8 +6,13 @@
       <div class ="card-title">{{ title }}</div>
 
         <ul>
-          <li ng-repeat="x in imageGrp" class="white-text card-image col s4" data-id=" {{ x.objectId }} ">
-            <img src="{{ x.URL }}">
+          <li ng-repeat="x in imageGrp" class="white-text card-image col s4 dash-image" data-id="{{ x.objectId }}" style="width: 270px; height:250px;overflow:hidden;margin-bottom:20px;position:relative;">
+            <a href="{{ x.URL }}" id = "imgcard">
+              <img src="{{ x.URL }}" style="height: 100%;width:100%;">
+            </a>
+            <span id="delete-btn" class="delete-btn red-text" ng-click="removePic(x)">&times;</span>
+
+            <span id="img-cap" class="img-cap">uploaded by {{ x.username }}</span>
           </li>
         </ul>
 

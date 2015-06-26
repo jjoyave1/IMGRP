@@ -3,7 +3,6 @@
 <head>
   <title>IMGRP.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/vendor/materialize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -15,7 +14,7 @@
     <div class="nav-wrapper black">
       <a href="#/" class="brand-logo">IMGRP.</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li ng-controller="User"><a href="#/" class="waves-effect waves-light navlinks grey-text">{{ username }}</a></li>
+        <li><a href="#/" class="waves-effect waves-light navlinks grey-text" id="user-name-univ"></a></li>
         <li><a href="#/" class="waves-effect waves-light navlinks">Home</a></li>
         <li><a href="#/upload" class="waves-effect waves-light navlinks">Upload</a></li>
 
@@ -48,7 +47,7 @@
 
         <div class="col s1 divider grey darken-4"></div>
 
-        <form class="col s5 card black lighten-3 left" ng-submit="userLogin(user)">
+        <form class="col s5 card black lighten-3 left" ng-submit="userLogin(user)" onsubmit="setTimeout(function () { window.location.reload(); }, 100)">
 
           <h4 class="login-header">Log in</h4>
 
@@ -65,7 +64,7 @@
             </div>
 
             <div class="row card-content black white-text center">
-              <submit type="submit" class = "btn waves-effect waves-light">Log In</submit>
+              <button type="submit" class = "btn waves-effect waves-light">Log In</button>
             </div>
 
           </div>
@@ -109,9 +108,10 @@
 
   <!-- MAIN -->
   <script src="js/main.js"></script>
-  <script src="js/photo/photo.controller.js"></script>
+  <script src="js/image/image.controller.js"></script>
   <script src="js/user/user.controller.js"></script>
-  <script src="js/photo/photogrp.controller.js"></script>
+  <script src="js/image/imagegrp.service.js"></script>
+  <script src="js/image/imagegrp.controller.js"></script>
   <script src="js/user/usergrp.controller.js"></script>
 
 </body>

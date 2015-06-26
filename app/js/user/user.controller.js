@@ -31,6 +31,7 @@
       user.username = data.username;
       user.password = data.password;
       user.objectId = data.objectId;
+      user.email = data.email;
 
       $http.get(PARSE.URL + 'classes/users/', PARSE.CONFIG)
       .success( function(x) {
@@ -46,7 +47,6 @@
         }
 
       });
-
     };
 
     $scope.logout = function() {

@@ -54,5 +54,15 @@
     }
   ]);
 
+  // logged-in user handler
+  $('#user-name-univ').html(Cookies.get('username'));
+
+  // img hover handler
+  // $('#imgcard').on('mouseenter', function(){
+  //   $('#delete-btn').fadeIn();
+  //   $('#imgcard').on('mouseleave', function(){
+  //     $('#delete-btn').fadeOut();
+  //   });
+  // });
 
 }());
