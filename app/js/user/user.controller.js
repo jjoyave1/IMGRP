@@ -26,6 +26,41 @@
       })
     };
 
+    $scope.userLogin = function(data) {
+      var user = {}
+      user.username = data.username;
+      user.password = data.password;
+      user.objectId = data.objectId;
+
+      $http.get(PARSE.URL + 'classes/users/', PARSE.CONFIG)
+      .success( function(x) {
+
+        for (var i = 0; i < x.results.length; i++) {
+          if(x.results[i].username == user.username) {
+
+            Cookies.set('access_token');
+            Cookies.set('username', user.username);
+            Cookies.set('id', x.results[i].objectId);
+
+          }
+        }
+
+      });
+
+    };
+
+    $scope.logout = function() {
+
+      Cookies.expire('access_token');
+      Cookies.expire('username');
+      Cookies.expire('id');
+
+      $scope.user = {}
+
+    };
+
+    $scope.username = Cookies.get('username');
+
 
   }]);
 
