@@ -1,5 +1,5 @@
 {
-  "name": "IMGRP",
+  "name": "im-grp",
   "root": "./app/",
   "clean_urls": true,
   "error_page": "error.html"
